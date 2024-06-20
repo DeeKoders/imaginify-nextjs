@@ -48,7 +48,18 @@ const TransformedImage = ({
                 setIsTransforming && setIsTransforming(false);
               }, 8000);
             }}
+            {...transformationConfig}
           />
+          {isTransforming && (
+            <div className="transforming-loader">
+              <Image
+                src="/assets/icons/spinner.svg"
+                alt="Transforming Loader"
+                width={50}
+                height={50}
+              />
+            </div>
+          )}
         </div>
       ) : (
         <div className="transformed-placeholder">Transformed Image</div>
